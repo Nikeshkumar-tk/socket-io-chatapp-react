@@ -92,7 +92,8 @@
     border-radius: 5px;
     border-top-right-radius: 0px;
     color: #fff;
-    position:relative
+    position:relative;
+    min-width: 40px;
   }
   .sender h6{
     position: absolute;
@@ -113,7 +114,8 @@
     border-radius: 5px;
     border-top-left-radius: 0px;
     color: #fff;
-    position:relative
+    position:relative;
+    min-width: 40px;
 
   }
   .send-icon {
