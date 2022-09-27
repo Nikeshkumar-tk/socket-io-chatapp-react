@@ -12,7 +12,7 @@ function App() {
 
   const [userName,setUserName] = useState('')
   const [roomId,setRoomId] = useState('')
-  const [showChat,setShowChat] = useState(true)
+  const [showChat,setShowChat] = useState(false)
   
 
   const joinRoom = () =>{
