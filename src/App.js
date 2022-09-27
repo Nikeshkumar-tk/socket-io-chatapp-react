@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+
 import './App.css';
+import io from 'socket.io-client'
+import JoinRoom from './components/joinRoom/JoinRoom';
+import { useState } from 'react';
+import Chats from './components/chats/Chats';
+
+
+const socket = io("https://socketio-chat-app-1.herokuapp.com/")
 
 function App() {
+
+  const [userName,setUserName] = useState('')
+  const [roomId,setRoomId] = useState('')
+  const [showChat,setShowChat] = useState(false)
+  
+
+  const joinRoom = () =>{
+
+    if(userName !== "" && roomId !== ""){
+      socket.emit('joinRoom',roomId)
+      setShowChat(true)
+    }
+
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+{ !showChat?
+<JoinRoom setUserName={setUserName} setRoomId={setRoomId} joinRoom = {joinRoom}/>
+     :<Chats socket = {socket} userName = {userName} roomId = {roomId}/>
+}
     </div>
   );
 }

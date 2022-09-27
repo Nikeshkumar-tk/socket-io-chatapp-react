@@ -1,0 +1,54 @@
+
+
+.join-room-wrap{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: steelblue;
+
+}
+.join-room-inner{
+    height: 500px;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+
+}
+.join-room-inner input{
+
+    /* height: 40px;
+    width: 200px; */
+ 
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    
+
+
+}
+.join-room-inner div{
+
+    border: 1px solid white;
+    width: 250px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 35px;
+   
+}
+.join-room-inner button{
+
+    padding: 15px;
+    width: 160px;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    cursor: pointer;
+    
+}
